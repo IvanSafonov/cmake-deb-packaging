@@ -2,7 +2,7 @@
 
 Adds a target **deb_package** to the project that builds package(s).
 
-## Debian control file parametres
+## Debian control file parameters
 More information about deb-control file at: http://manpages.ubuntu.com/manpages/trusty/man5/deb-control.5.html
 
 **Required parameters:**
@@ -28,7 +28,7 @@ More information about deb-control file at: http://manpages.ubuntu.com/manpages/
 * **DEB_PACKAGE_REPLACES** - Replaces
 * **DEB_PACKAGE_PROVIDES** - Provides
 
-## Module parametres
+## Module parameters
 
 * **DEB_PACKAGE_CONTROL_FILES** - additional debian control files (postint, prerm, etc)
 * **DEB_PACKAGE_COMPONENTS** - cmake components to build as separate packages. If is set, deb-control parameters should be changed to **DEB_PACKAGE_COMPOTENT_PARAMETER**
