@@ -90,7 +90,7 @@ function(make_deb_target COMPONENT)
         COMMAND test -z "${DEB_PACKAGE${COMPONENT}_CONTROL_FILES}" || cp ${DEB_PACKAGE${COMPONENT}_CONTROL_FILES} -t ${TMP_PACKAGE_DEB_DIR}
         COMMAND make DESTDIR=${TMP_PACKAGE_DIR} install${COMPONENT}
         COMMAND echo -n "Installed-Size: " >> ${TMP_PACKAGE_DEB_DIR}/control
-        COMMAND du -sx --exclude DEBIAN ${TMP_PACKAGE_DIR} | grep -o -E [0-9]+ >> ${TMP_PACKAGE_DEB_DIR}/control
+        COMMAND du -sx --exclude DEBIAN ${TMP_PACKAGE_DIR} | grep -o -E ^[0-9]+ >> ${TMP_PACKAGE_DEB_DIR}/control
         COMMAND dpkg-deb --build ${TMP_PACKAGE_DIR} ${PACKAGE_FILENAME}
         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
         VERBATIM
